@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>SSH</title>
+<link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/png" href="images/ethical_hacker_logo.png">
+</head>
+<body>
+<nav><a href="index.html">Home</a></nav>
+
+<header><h1>SSH</h1></header>
+
+<section>
+
+<h2>What is SSH?</h2>
+<p>
+SSH (Secure Shell) is a protocol that allows you to connect to another computer securely over a network. It encrypts all communication, making it safe from interception.
+</p>
+
+<h2>Why SSH Exists</h2>
+<p>
+Before SSH, tools like Telnet sent data in plain text. That meant usernames and passwords could be easily captured. SSH solved this problem by encrypting everything.
+</p>
+
+<h2>Example Command</h2>
+<pre>ssh student@192.168.1.100</pre>
+
+<p>
+<strong>student</strong> = the account you are logging into<br>
+<strong>192.168.1.100</strong> = the target machine
+</p>
+
+<h2>What You Can Do After Connecting</h2>
+<p>
+Once connected, you can run commands, edit files, install programs, and fully control the remote system — just like you were physically using it.
+</p>
+
+<h2>Why This Matters in Hacking</h2>
+<p>
+SSH is often the goal after discovering a system. If an attacker gains access, they can take full control. Ethical hackers test whether this access is properly secured.
+</p>
+</section>
+
+<section>
+<h2>Quick Check</h2>
+<p>What problem does SSH solve?</p>
+
+<button onclick="checkSSH(true)">Encrypts connections</button>
+<button onclick="checkSSH(false)">Speeds internet</button>
+
+<p id="ssh-result"></p>
+</section>
+
+<script>
+function checkSSH(correct) {
+  const result = document.getElementById("ssh-result");
+
+  if (correct) {
+    result.innerHTML = "✅ Correct! SSH encrypts data to protect it.";
+    result.style.color = "#00ff88";
+  } else {
+    result.innerHTML = "❌ Incorrect. SSH is about security, not speed. Try Again!";
+    result.style.color = "red";
+  }
+}
+</script>
+
+<footer>
+<p>© 2026 Khris Gonzalez • Web Developer Portfolio. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
