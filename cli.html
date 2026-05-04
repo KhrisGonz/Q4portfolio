@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>CLI</title>
+<link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/png" href="images/ethical_hacker_logo.png">
+</head>
+<body class="cli">
+
+<nav><a href="index.html">Home</a></nav>
+
+<header>
+<h1>Command Line Interface (CLI)</h1>
+</header>
+
+<section>
+
+<h2>What is the CLI?</h2>
+<p>
+The Command Line Interface (CLI) allows you to interact with a system using typed commands instead of clicking through menus. While it may seem harder at first, it gives you far more control over a system.
+</p>
+
+<h2>Why Professionals Use It</h2>
+<p>
+In cybersecurity, speed and precision matter. The CLI allows testers to move quickly, automate tasks, and work remotely without needing a graphical interface.
+</p>
+
+<h2>Real Example</h2>
+<pre>
+cd /etc
+ls -la
+</pre>
+
+<p>
+This command navigates into a system directory and lists all files, including hidden ones. During a penetration test, this helps identify configuration files, system settings, or sensitive data that could be misconfigured.
+</p>
+
+<h2>Why It Matters</h2>
+<p>
+Understanding how to move through a system is one of the first steps in ethical hacking. If you can’t navigate efficiently, you can’t investigate vulnerabilities effectively.
+</p>
+</section>
+
+<section>
+<h2>Why CLI Matters</h2>
+<p>The CLI allows fast, precise control over systems, which is critical in cybersecurity.</p>
+</section>
+
+<section>
+<h2>Quick Check</h2>
+<p>Why do professionals prefer the CLI?</p>
+
+<button onclick="checkCLI(true)">Faster and more precise</button>
+<button onclick="checkCLI(false)">Looks better</button>
+
+<p id="cli-result"></p>
+</section>
+
+<script>
+// CLI QUIZ
+function checkCLI(correct) {
+  const result = document.getElementById("cli-result");
+
+  if (correct) {
+    result.innerHTML = "✅ Correct! CLI allows speed, precision, and automation.";
+    result.style.color = "#00ff88";
+  } else {
+    result.innerHTML = "❌ Incorrect. It’s about efficiency, not appearance.";
+    result.style.color = "red";
+  }
+}
+
+// FAKE TERMINAL
+function runCommand() {
+  let cmd = document.getElementById("command").value;
+  let out = document.getElementById("output");
+
+  if (cmd === "ls") {
+    out.innerText = "config.txt\nusers.db\n.hidden";
+  } else {
+    out.innerText = "command not found";
+  }
+}
+</script>
+
+<footer>
+<p>© 2026 Khris Gonzalez • Web Developer Portfolio. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
