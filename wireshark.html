@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Wireshark</title>
+<link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/png" href="images/ethical_hacker_logo.png">
+</head>
+<body>
+
+<nav><a href="index.html">Home</a></nav>
+
+<header><h1>Wireshark</h1></header>
+
+<section>
+<h2>What is a Packet?</h2>
+<p>
+A packet is a small piece of data sent across a network. Think of it like a digital envelope carrying information from one computer to another.
+</p>
+
+<h2>What Does Wireshark Do?</h2>
+<p>
+Wireshark captures and displays these packets in real time. It allows you to see exactly what data is being sent across a network.
+</p>
+
+<h2>Real Scenario</h2>
+<p>
+If a user logs into a website using HTTP instead of HTTPS, their username and password can be sent in plain text.
+</p>
+
+<h2>What Wireshark Would Show</h2>
+<p>
+A tester could see the login request and read the credentials directly from the captured packets.
+</p>
+
+<h2>Why This Matters</h2>
+<p>
+This shows why encryption is critical. Ethical hackers use Wireshark to find insecure data transmission and report it.
+</p>
+</section>
+
+<section>
+<h2>Quick Check</h2>
+<p>What can Wireshark reveal?</p>
+
+<button onclick="checkWire(true)">Passwords</button>
+<button onclick="checkWire(false)">Nothing useful</button>
+
+<p id="wire-result"></p>
+</section>
+
+<script>
+function checkWire(correct) {
+  const result = document.getElementById("wire-result");
+
+  if (correct) {
+    result.innerHTML = "✅ Correct! Unencrypted traffic exposes sensitive data.";
+    result.style.color = "#00ff88";
+  } else {
+    result.innerHTML = "❌ Incorrect. It can reveal a lot if not encrypted.";
+    result.style.color = "red";
+  }
+}
+</script>
+
+<footer>
+<p>© 2026 Khris Gonzalez • Web Developer Portfolio. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
