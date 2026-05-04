@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Hydra</title>
+<link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/png" href="images/ethical_hacker_logo.png">
+</head>
+<body class="hydra">
+
+<nav><a href="index.html">Home</a></nav>
+
+<header><h1>Hydra</h1></header>
+
+<section>
+<h2>What is Hydra?</h2>
+<p>
+Hydra is a tool used to test login systems by automatically trying many username and password combinations.
+</p>
+
+<h2>What is a Wordlist?</h2>
+<p>
+A wordlist is a file containing possible passwords. Hydra uses this list to attempt logins one by one.
+</p>
+
+<h2>Example Command</h2>
+<pre>
+hydra -l admin -P rockyou.txt ssh://192.168.1.50
+</pre>
+
+<p>
+-l = username<br>
+-P = password list<br>
+ssh:// = protocol and target
+</p>
+
+<h2>Why Ethical Hackers Use It</h2>
+<p>
+It helps test whether weak passwords exist. If Hydra successfully logs in, it means the system is vulnerable.
+</p>
+
+<h2>Ethics</h2>
+<p>
+Using Hydra without permission is illegal because it attempts unauthorized access. Ethical hackers only use it in controlled, approved environments.
+</p>
+
+<h2>Defenses</h2>
+<p>
+Systems can defend against this with account lockouts, rate limiting, and multi-factor authentication.
+</p>
+</section>
+
+<section>
+<h2>Quick Check</h2>
+<p>Why is Hydra dangerous?</p>
+
+<button onclick="checkHydra(true)">Unauthorized access</button>
+<button onclick="checkHydra(false)">Slows systems</button>
+
+<p id="hydra-result"></p>
+</section>
+
+<script>
+function checkHydra(correct) {
+  const result = document.getElementById("hydra-result");
+
+  if (correct) {
+    result.innerHTML = "✅ Correct! It attempts to break into accounts.";
+    result.style.color = "#00ff88";
+  } else {
+    result.innerHTML = "❌ Incorrect. The issue is legality.";
+    result.style.color = "red";
+  }
+}
+</script>
+
+<footer>
+<p>© 2026 Khris Gonzalez • Web Developer Portfolio. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
