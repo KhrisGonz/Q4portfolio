@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Brute Force</title>
+<link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/png" href="images/ethical_hacker_logo.png">
+</head>
+<body class="brute">
+
+<nav><a href="index.html">Home</a></nav>
+
+<header><h1>Brute Force</h1></header>
+
+<section>
+<h2>What is a Brute-Force Attack?</h2>
+<p>
+A brute-force attack is a method where every possible password is tried until the correct one is found.
+</p>
+
+<h2>Dictionary vs Brute Force</h2>
+<p>
+A dictionary attack uses a list of common passwords, making it faster. A brute-force attack tries every possible combination, which takes longer but is more thorough.
+</p>
+
+<h2>Real Example</h2>
+<p>
+During a penetration test, a tester might use tools like Hydra to simulate a brute-force attack and check if weak passwords exist.
+</p>
+
+<h2>Defenses</h2>
+<ul>
+<li>Account lockouts after failed attempts</li>
+<li>Rate limiting login attempts</li>
+<li>Multi-factor authentication (MFA)</li>
+</ul>
+
+<h2>What a Finding Looks Like</h2>
+<p>
+If a weak password is discovered, the risk is unauthorized access. The recommendation would be to enforce stronger passwords and enable MFA.
+</p>
+</section>
+
+<section>
+<h2>Quick Check</h2>
+<p>What is brute force?</p>
+
+<button onclick="checkBrute(true)">Try all passwords</button>
+<button onclick="checkBrute(false)">One guess</button>
+
+<p id="brute-result"></p>
+</section>
+
+<script>
+function checkBrute(correct) {
+  const result = document.getElementById("brute-result");
+
+  if (correct) {
+    result.innerHTML = "✅ Correct! It tries every combination.";
+    result.style.color = "#00ff88";
+  } else {
+    result.innerHTML = "❌ Incorrect. It requires many attempts.";
+    result.style.color = "red";
+  }
+}
+</script>
+
+<footer>
+<p>© 2026 Khris Gonzalez • Web Developer Portfolio. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
