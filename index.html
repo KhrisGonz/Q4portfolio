@@ -1,60 +1,85 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Home | Computer Networks Education</title>
-  <link rel="stylesheet" href="styles.css" />
+<title>Ethical Hacking</title>
+<link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/png" href="images/ethical_hacker_logo.png">
 </head>
 <body>
-  <header>
-    <h1>Welcome to Computer Networks Education</h1>
-    <p>Learn the fundamentals of networking with visual guides, practical examples, and helpful resources.</p>
-    <nav>
-      <ul>
-        <li><a href="networking-overview.html">🌐 Networking Overview</a></li>
-        <li><a href="wired-network.html">🔌 Wired Network</a></li>
-        <li><a href="wireless-network.html">📶 Wireless Network</a></li>
-        <li><a href="summary-resources.html">📚 Summary & Resources</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <main class="content">
-    <section class="home-intro">
-      <h2>About This Site</h2>
-      <p>This website is designed for students, teachers, and tech enthusiasts who want to understand the principles of computer networks. Whether you're just starting out or need a quick review, our easy-to-follow guides and diagrams will help you learn effectively.</p>
-    </section>
+<nav>
+<a href="index.html">Home</a>
+<a href="cli.html">CLI</a>
+<a href="ssh.html">SSH</a>
+<a href="nmap.html">Nmap</a>
+<a href="wireshark.html">Wireshark</a>
+<a href="hydra.html">Hydra</a>
+<a href="bruteforce.html">Brute Force</a>
+</nav>
 
-    <section class="home-cards">
-      <div class="home-card">
-        <h3>🌐 Networking Overview</h3>
-        <p>Learn about components, IP addressing, network types, and the benefits of networking.</p>
-        <a href="networking-overview.html" class="btn">Explore</a>
-      </div>
+<header>
+<h1 id="typewriter"></h1>
+<p>Cybersecurity Knowledge Base</p>
+</header>
 
-      <div class="home-card">
-        <h3>🔌 Wired Network</h3>
-        <p>Understand how wired networks function, the hardware needed, and their advantages.</p>
-        <a href="wired-network.html" class="btn">Explore</a>
-      </div>
+<section>
+<h2>What is Ethical Hacking?</h2>
+<p>
+Ethical hacking is the practice of testing systems, networks, or applications for security weaknesses with permission. The goal is to find problems before malicious attackers do.
+</p>
 
-      <div class="home-card">
-        <h3>📶 Wireless Network</h3>
-        <p>Dive into wireless communication, including Wi-Fi components and pros & cons.</p>
-        <a href="wireless-network.html" class="btn">Explore</a>
-      </div>
+<h2>Ethical vs Illegal Hacking</h2>
+<p>
+The tools are often the same, but the key difference is authorization. Ethical hackers have permission and work to protect systems, while illegal hackers act without consent.
+</p>
 
-      <div class="home-card">
-        <h3>📚 Summary & Resources</h3>
-        <p>Review key takeaways and discover more learning materials and tools.</p>
-        <a href="summary-resources.html" class="btn">Explore</a>
-      </div>
-    </section>
-  </main>
+<h2>Why It Matters</h2>
+<p>
+Organizations rely on ethical hackers to identify vulnerabilities early. Without testing, these weaknesses could be exploited in real attacks.
+</p>
+</section>
 
-  <footer>
-    <p>&copy; 2025 Computer Networks Education</p>
-  </footer>
+
+<section>
+<h2>Quick Check</h2>
+<p>What is the MOST important difference between ethical and illegal hacking?</p>
+
+<button onclick="checkHome(true)">Authorization / Permission</button>
+<button onclick="checkHome(false)">Tools used</button>
+
+<p id="home-result"></p>
+</section>
+
+<script>
+// TYPEWRITER EFFECT
+const text = "Ethical Hacking";
+let i = 0;
+function typeWriter() {
+  if (i < text.length) {
+    document.getElementById("typewriter").innerHTML += text.charAt(i);
+    i++;
+    setTimeout(typeWriter, 70);
+  }
+}
+window.onload = typeWriter;
+
+// HOMEPAGE QUIZ
+function checkHome(correct) {
+  const result = document.getElementById("home-result");
+
+  if (correct) {
+    result.innerHTML = "✅ Correct! Ethical hacking requires permission and is done to improve security.";
+    result.style.color = "#00ff88";
+  } else {
+    result.innerHTML = "❌ Incorrect. The tools are often the same — permission is what makes it ethical.";
+    result.style.color = "red";
+  }
+}
+</script>
+
+<footer>
+<p>© 2026 Khris Gonzalez • Web Developer Portfolio. All rights reserved.</p>
+</footer>
+
 </body>
 </html>
