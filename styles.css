@@ -1,70 +1,85 @@
+:root {
+  --bg: #0a0a0a;
+  --panel: #111;
+  --text: #f5f5f5;
+  --red: #ff2e2e;
+}
+
 body {
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #f4f4f9;
   margin: 0;
-  padding: 0;
-  line-height: 1.6;
+  font-family: Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
 }
 
-header {
-  background-color: #004080;
-  color: white;
-  padding: 1rem;
+nav {
+  background: black;
+  padding: 12px;
   text-align: center;
-}
-
-header h1 {
-  margin: 0;
-}
-
-nav ul {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  list-style: none;
-  padding: 0;
-  margin-top: 1rem;
+  border-bottom: 2px solid var(--red);
 }
 
 nav a {
   color: white;
+  margin: 10px;
   text-decoration: none;
   font-weight: bold;
+  transition: 0.3s;
 }
 
 nav a:hover {
-  text-decoration: underline;
+  color: var(--red);
 }
 
-main.content {
-  padding: 2rem;
-  max-width: 1000px;
-  margin: auto;
+header {
+  text-align: center;
+  padding: 40px;
+  background: linear-gradient(to right, black, #550000);
 }
 
-.card {
-  background-color: white;
-  padding: 1.5rem;
-  margin-bottom: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+section {
+  margin: 20px auto;
+  max-width: 900px;
+  padding: 20px;
+  background: var(--panel);
+  border-left: 5px solid var(--red);
+  transition: 0.2s;
 }
 
-.card h2 {
-  color: #004080;
+section:hover {
+  transform: translateY(-4px);
 }
 
-.card img {
-  max-width: 100%;
-  height: auto;
-  margin-top: 1rem;
-  border-radius: 8px;
+pre {
+  background: black;
+  color: #00ff88;
+  padding: 10px;
 }
+
+button {
+  background: var(--red);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: darkred;
+}
+
+/* Page-specific themes */
+.cli section { background: black; color: #00ff88; font-family: monospace; }
+.nmap section { box-shadow: 0 0 15px red; }
+.hydra header { background: linear-gradient(to right, #300000, red); }
+.brute section { box-shadow: 0 0 20px darkred; }
 
 footer {
-  background-color: #004080;
-  color: white;
   text-align: center;
-  padding: 1rem;
-  margin-top: 3rem;
+  padding: 15px;
+  background: black;
+  color: #888;
+  font-size: 14px;
+  border-top: 1px solid #222;
+  margin-top: 40px;
 }
