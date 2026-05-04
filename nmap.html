@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Nmap</title>
+<link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/png" href="images/ethical_hacker_logo.png">
+</head>
+<body class="nmap">
+
+<nav><a href="index.html">Home</a></nav>
+
+<header><h1>Nmap</h1></header>
+
+<section>
+<h2>What is Nmap?</h2>
+<p>
+Nmap is a network scanning tool used to discover devices on a network and identify what services they are running.
+</p>
+
+<h2>What Are Ports?</h2>
+<p>
+Ports are like doors into a system. Each service (like a website or database) runs on a specific port. If a port is open, it means something is listening — and that could be a target.
+</p>
+
+<h2>Example Scan</h2>
+<pre>
+nmap -sV 192.168.1.0/24
+</pre>
+
+<h2>Sample Output</h2>
+<pre>
+22/tcp open ssh
+80/tcp open http
+</pre>
+
+<p>
+Port 22 shows SSH is available. Port 80 shows a web server is running. These results tell a tester where to focus next.
+</p>
+
+<h2>Why This Matters</h2>
+<p>
+Nmap is usually the first step in a penetration test. You can’t attack what you don’t know exists. This tool maps out the entire environment.
+</p>
+</section>
+
+<section>
+<h2>Quick Check</h2>
+<p>Why are open ports important?</p>
+
+<button onclick="checkNmap(true)">Possible entry points</button>
+<button onclick="checkNmap(false)">Increase speed</button>
+
+<p id="nmap-result"></p>
+</section>
+
+<script>
+function checkNmap(correct) {
+  const result = document.getElementById("nmap-result");
+
+  if (correct) {
+    result.innerHTML = "✅ Correct! Open ports show services attackers can target.";
+    result.style.color = "#00ff88";
+  } else {
+    result.innerHTML = "❌ Incorrect. Ports show access, not performance.";
+    result.style.color = "red";
+  }
+}
+</script>
+
+<footer>
+<p>© 2026 Khris Gonzalez • Web Developer Portfolio. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
